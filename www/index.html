@@ -27,6 +27,15 @@
 
     <link href="http://geek-ish.com/test/Tilts/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://geek-ish.com/test/Tilts/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://geek-ish.com/test/Tilts/css/font-awesome.min.css" >
+	
+	<style type="text/css">
+      #map {
+        width: 500px;
+        height: 400px;
+        margin-top: 10px;
+      }
+    </style>
 
   </head>
   <body>
@@ -34,7 +43,7 @@
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6" style="background-color: orange;">
-			<img alt="Geek-ish" src="http://geek-ish.com/test/Tilts/src/Images/lg_logo.jpg">
+			<img alt="Geek-ish" src="http://geek-ish.com/test/Tilts/src/latest/Images/lg_logo.jpg">
 			<a href="#modal-container-9261" role="button" class="btn" data-toggle="modal">Login</a>
 		</div>
 		<div class="col-md-6" style="background-color: orange;">
@@ -75,51 +84,242 @@
 				<div class="tabbable" id="tabs-365672">
 					<ul class="nav nav-tabs">
 						<li>
-							<a href="#tabPage1" data-toggle="tab">OMW</a>
+							<a href="#tabPage1" data-toggle="tab">Hello</a>
 						</li>					
 						<li class="active">
-							<a href="#tabPage2" data-toggle="tab">Home</a>
+							<a href="#tabPage2" data-toggle="tab">OMW</a>
 						</li>
 						<li>
-							<a href="#tabPage3" data-toggle="tab">Members</a>
+							<a href="#tabPage3" data-toggle="tab">Tilts</a>
 						</li>
 						<li>
-							<a href="#tabPage4" data-toggle="tab">Password Recovery</a>
-						</li>		
-						<li>
-							<a href="#tabPage5" data-toggle="tab">Change Password</a>
-						</li>
-						<li>
-							<a href="#tabPage6" data-toggle="tab">#FatPockets</a>
-						</li>								
+							<a href="#tabPage4" data-toggle="tab">Domesticology</a>
+						</li>										
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane" id="tabPage1">
-							<p>
-								<h3> Hello World - Device Properties Example</h3>
-								<div class="app">
-									<h4>PhoneGap</h4>
-									<div id="deviceready" class="blink">
-										<p class="event listening">Connecting to Device</p>
-										<p class="event received">Device is Ready</p>
-									</div>
-								</div>
-								<p id="geolocation">Finding geolocation...</p>
-							</p>
+							<h1>Hello world</h1>
 						</div>					
 						<div class="tab-pane active" id="tabPage2">
 							<p>
-								Hello world
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="tabbable" id="tabs-1234">
+												<ul class="nav nav-tabs">
+													<li class="active">
+														<a href="#tabPageOmw1" data-toggle="tab">Get my coordinates</a>
+													</li>
+													<li>
+														<a href="#tabPageOmw2" data-toggle="tab">Map my location</a>
+													</li>
+													<li>
+														<a href="#tabPageOmw3" data-toggle="tab">Map my route</a>
+													</li>													
+												</ul>
+												<div class="tab-content">
+													<div class="tab-pane active" id="tabPageOmw1">
+														<p>
+															<h3> Hello World - Device Properties Example</h3>
+															<div class="app">
+																<h4>PhoneGap</h4>
+																<div id="deviceready" class="blink">
+																	<p class="event listening">Connecting to Device</p>
+																	<p class="event received">Device is Ready</p>
+																</div>
+															</div>
+															<p id="geolocation">Finding geolocation...</p>
+														</p>
+													</div>
+													<div class="tab-pane" id="tabPageOmw2">
+														<p>
+															<p id="demo">Click the button to get your position.</p>
+															<button onclick="getLocation()">Try It</button>
+															<div id="mapholder"></div>
+														</p>
+													</div>
+													<div class="tab-pane" id="tabPageOmw3">
+														<p>
+															<h1>Calculate your route</h1>
+															<form id="calculate-route" name="calculate-route" action="#" method="get">
+															  <label for="from">From:</label>
+															  <input type="text" id="from" name="from" required="required" placeholder="An address" size="30" />
+															  <a id="from-link" href="#">Get my position</a>
+															  <br />
+
+															  <label for="to">To:</label>
+															  <input type="text" id="to" name="to" required="required" value="Bear Library, 101 Governors Pl, Bear, DE 19701" placeholder="Another address" size="30" />
+															  <a id="to-link" href="#">Get my position</a>
+															  <br />
+
+															  <input type="submit" />
+															  <input type="reset" onclick="reset_onClick()" />
+															</form>
+															<div id="map"></div>
+															<div id="dir-panel"></div>
+															<p id="error"></p>
+														</p>
+													</div>													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</p>
 						</div>
 						<div class="tab-pane" id="tabPage3">
 							<p>
-								Welcome to the members only page.
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="tabbable" id="tabs-365672">
+													<ul class="nav nav-tabs">		
+														<li class="active">
+															<a href="#tabPageOmw2" data-toggle="tab">Home</a>
+														</li>
+														<li>
+															<a href="#tabPageOmw3" data-toggle="tab">Members</a>
+														</li>
+														<li>
+															<a href="#tabPageOmw4" data-toggle="tab">Password Recovery</a>
+														</li>		
+														<li>
+															<a href="#tabPageOmw5" data-toggle="tab">Change Password</a>
+														</li>
+														<li>
+															<a href="#tabPageOmw6" data-toggle="tab">#FatPockets</a>
+														</li>								
+													</ul>
+													<div class="tab-content">				
+														<div class="tab-pane active" id="tabPageOmw2">
+															<p>
+																Hello world
+															</p>
+														</div>
+														<div class="tab-pane" id="tabPageOmw3">
+															<p>
+																Welcome to the members only page.
+															</p>
+														</div>
+														<div class="tab-pane" id="tabPageOmw4">
+															<p>
+																Password recovery
+															</p>
+														</div>
+														<div class="tab-pane" id="tabPageOmw5">
+															<p>
+																Change password
+															</p>
+														</div>	
+														<div class="tab-pane" id="tabPageOmw6">
+															<div class="container-fluid">
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="row">
+																		<div class="col-md-6">
+																			<img alt="Me" height="150px" width="150px" src="http://geek-ish.com/images/Me/300x300.jpg">
+																		</div>
+																		<div class="col-md-6">
+																			<blockquote>
+																				<p>
+																					What do you think about the beverage tax being placed in sugary beverages in Philly?
+																				</p>
+																			</blockquote>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-6">
+																</div>
+															</div>
+															<div class="row">
+																<div class="col-md-3">
+																	<img alt="Bootstrap Image Preview" src="http://pics1.pof.com/dating/1129/10/49/3769677b7-9cb1-4873-8b11-43f0f5da9dbc.jpg">
+																</div>
+																<div class="col-md-3">
+																	<img alt="Bootstrap Image Preview" src="http://pics1.pof.com/dating/1127/86/6/18b02d1b9-c5f2-46e5-b491-11c38faafd55.jpg">
+																</div>
+																<div class="col-md-3">
+																	<img alt="Bootstrap Image Preview" src="http://pics1.pof.com/dating/1129/17/45/3cec078bf-4296-425a-b2f8-da06bb701e17.2.jpg">
+																</div>
+																<div class="col-md-3">
+																	<img alt="Bootstrap Image Preview" src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/16640646_10210872317437985_5333132784293060274_n.jpg?oh=b6701caf1a362f5072ac52c133df15c1&oe=5973E0F4">
+																</div>
+															</div>
+														</div>
+
+													</div>							
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</p>
 						</div>
 						<div class="tab-pane" id="tabPage4">
 							<p>
-								Password recovery
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="tabbable" id="tabs-111932364">
+											<ul class="nav nav-tabs">
+												<li class="active">
+													<a href="#tabPageDomesticDocSarah1" data-toggle="tab">Home</a>
+												</li>
+												<li>
+													<a href="#tabPageDomesticDocSarah2" data-toggle="tab">Mock1</a>
+												</li>
+											</ul>
+											<div class="tab-content">
+												<div class="tab-pane active" id="tabPageDomesticDocSarah1">
+													<p>
+														Hello world Domesticology 
+													</p>
+												</div>
+												<div class="tab-pane" id="tabPageDomesticDocSarah2">
+													<p>
+														<div class="container-fluid">
+														<div class="col-xs-12 padding-0	">
+																<div class="col-xs-12 col-sm-4 padding-0">
+																	<img class="img-responsive face" src="http://geek-ish.com/test/Tilts/images/face.png" alt="http://geek-ish.com/test/Tilts/images/face.png">
+																</div>
+																<div class="col-xs-12 col-sm-3">
+																	<p class="para-1">"Sara Elizabeth is definitely up there with Zane and E. Lynn Harris. Sasha is running with the likes of Zoe and Basil.It's so exciting to have an another author to choice the ranks of erotic screen. Every turn of the page you are living out of all our sexual fantasies.Sasha has the men and readers coming back from more and more..."</p>
+																	<h4 class="text-right margin-bottom-0">Terry Lee</h4>
+																	<p class="text-right margin-top-0">Social Work</p>
+																	<p class="para-1 margin-top-10">"Sasha lives the life we all dreamt about. She enjoys and revels in her sexually, dives deep into her emotions, and successfully navigates mentally. So few people are able to live out the box and according to their own terms. Most of us are held back from the social norms, expectations and domestications. To be totally free like Sasha, you must embrace your inner self and then let her go and let'er fly.She teaches us to enjoy our lives and, most importantly, love our selfs!"</p>
+																	<h4 class="text-right margin-bottom-0">Terry Lee</h4>
+																	<p class="text-right margin-top-0">Social Work</p>
+																</div>
+																<div class="col-xs-12 col-sm-5">
+																	<div class="block-1">
+																		<div class="col-xs-12 col-sm-12 padding-0">
+																			<img class="img-2 pull-left img-responsive" src="http://geek-ish.com/test/Tilts/images/img-1.png" alt="http://geek-ish.com/test/Tilts/images/img-1.png">
+																			<img class="img-1 pull-right img-responsive" src="http://geek-ish.com/test/Tilts/images/img-2.png" alt="http://geek-ish.com/test/Tilts/images/img-2.png">
+																		</div>
+																		<div class="col-xs-12 col-sm-12 padding-0">
+																			<img class="img-3 pull-left img-responsive" src="http://geek-ish.com/test/Tilts/images/img-3.png" alt="http://geek-ish.com/test/Tilts/images/img-3.png">
+																			<img class="img-4 pull-left img-responsive" src="http://geek-ish.com/test/Tilts/images/img-4.png" alt="http://geek-ish.com/test/Tilts/images/img-4.png">
+																			<img class="img-5 pull-left img-responsive" src="http://geek-ish.com/test/Tilts/images/img-5.png" alt="http://geek-ish.com/test/Tilts/images/img-5.png">			
+																		</div>
+																		<div class="clearfix"></div>
+																		<div class="line"></div>
+																		<div class="block-2">
+																			<img class="img-responsive img-6 margin-top-0" src="http://geek-ish.com/test/Tilts/images/img-6.png" alt="http://geek-ish.com/test/Tilts/images/img-6.png">
+																			<h3 class="pull-left margin-top-5"> With Host, Sara Elizabeth</h3 >
+																			<div class="clearfix"></div>
+																		</div>
+																		<div class="clearfix"></div>
+																	</div>
+																</div>
+														</div>
+													</div>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 							</p>
 						</div>
 						<div class="tab-pane" id="tabPage5">
@@ -176,11 +376,19 @@
     <script src="http://geek-ish.com/test/Tilts/js/jquery.min.js"></script>
     <script src="http://geek-ish.com/test/Tilts/js/bootstrap.min.js"></script>
     <script src="http://geek-ish.com/test/Tilts/js/scripts.js"></script>
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	
+	<script src="http://geek-ish.com/test/Tilts/js/jquery-2.2.3.min.js"></script>
+	
 	<script type="text/javascript" charset="utf-8">
 		// Wait for device API libraries to load
 		//
 		document.addEventListener("deviceready", onDeviceReady, false);
+
+		var x = document.getElementById("demo");
 
 		// device APIs are available
 		//
@@ -208,6 +416,142 @@
 			alert('code: '    + error.code    + '\n' +
 				  'message: ' + error.message + '\n');
 		}
-	</script>
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+}
+//To use this code on your website, get a free API key from Google.
+//Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+
+      function calculateRoute(from, to) {
+        ////Set the Google map parameters:  zoom, center, and mapTypeId.
+		////The coordinate point for the Bear, DE public library are:  39.635084 (latitude), -75.660021 (longitude)
+		//// ref:  http://www.latlong.net/convert-address-to-lat-long.html [4/10/16]
+		
+        var mapParams = {
+          zoom: 10,
+          center: new google.maps.LatLng(39.635084, -75.660021),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+		
+        //// Show map (using those map params)
+        var mapObject = new google.maps.Map(document.getElementById("map"), mapParams);
+		
+	var directionsDisplay = new google.maps.DirectionsRenderer;
+        directionsDisplay.setMap(mapObject);
+        directionsDisplay.setPanel(document.getElementById('dir-panel'));
+
+	var directionRequest = {
+          origin: from,
+          destination: to,
+          travelMode: google.maps.DirectionsTravelMode.DRIVING,
+          unitSystem: google.maps.UnitSystem.STANDARD
+        };
+		
+	var rendererDir = function(response, status) {
+		if (status == google.maps.DirectionsStatus.OK)
+			{
+			  new google.maps.DirectionsRenderer({
+				map: mapObject,
+				directions: response
+			  });
+			}
+			else
+			  $("#error").append("Unable to retrieve your route<br />");
+		  };
+		
+	var rendererMap = function(response, status) {
+          if (status === google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+          }
+		};
+		
+		////Instantiate a new Google Directions service obj.
+        var directionsService = new google.maps.DirectionsService();		
+		//directionsService.route(directionRequest, rendererDir);
+		directionsService.route(directionRequest, rendererMap);
+      }
+		
+	////Check that this browser supports geolocation AND exit out gracefully if not.
+	  $(document).ready(function() {
+		// If the browser supports the Geolocation API
+		if (typeof navigator.geolocation == "undefined") {
+		  $("#error").text("Your browser doesn't support the Geolocation API");
+		  return;
+		}
+
+	////Disable the source & destination if the event is cancelable and prevent the link from following the URL.
+        $("#from-link, #to-link").click(function(event) {
+          event.preventDefault();
+          var addressId = this.id.substring(0, this.id.indexOf("-"));
+		
+	////Get the user's current position and instantiate 
+          navigator.geolocation.getCurrentPosition(function(position) {
+			//Instantiate a Geocoder obj.
+            var geocoder = new google.maps.Geocoder();
+			//???Set that Geocoder obj's param values:???
+			//	'location' equal to the a new LatLng instance with the value of the user's current latitude & longitude coordinate positions AND
+			//
+			
+            geocoder.geocode({
+              "location": new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+            },
+            function(results, status) {
+              if (status == google.maps.GeocoderStatus.OK)
+                $("#" + addressId).val(results[0].formatted_address);
+              else
+                $("#error").append("Unable to retrieve your address<br />");
+            });
+          },
+          function(positionError){
+            $("#error").append("Error: " + positionError.message + "<br />");
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 10 * 1000 // 10 seconds
+          });
+        });
+
+        $("#calculate-route").submit(function(event) {
+          event.preventDefault();
+          calculateRoute($("#from").val(), $("#to").val());
+        });
+      });
+
+    function reset_onClick(){
+      document.getElementById("from").innerHTML = "";
+      document.getElementById("dir-panel").innerHTML = "";
+//      document.getElementById("map").innerHTML = "";
+    }
+  </script>
   </body>
 </html>
